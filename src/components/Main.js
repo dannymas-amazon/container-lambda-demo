@@ -11,7 +11,11 @@ export default function Main() {
             headers: {'Access-Control-Allow-Origin': '*'},
         })
         axios.get("https://p3z0km5und.execute-api.us-east-1.amazonaws.com/Prod/getCustomerDetail", config)
-            .then((response) => setData(response.data.message))
+            .then((response) => {
+                setData(response.data.message)
+                console.log("response.data.message")
+                console.log(response.data.message)
+            })
             .catch(function (error){
                 console.log(error)
             })

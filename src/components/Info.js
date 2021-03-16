@@ -37,14 +37,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Info(props) {
-    const [isLoading, setisLoading] = useState(true);
-    const [data, setData] = useState({});
     const classes = useStyles();
 
-    useEffect(() => {console.log(props.data.address.streetB)}, [])
+    useEffect(() => {console.log(props.data)}, [])
 
     return (
         <div className={classes.root}>
+            {props.data.address ? (
             <Grid container spacing={3}>
                 <Grid item xs={4}>
                     <Paper className={classes.paper}>
@@ -120,7 +119,7 @@ export default function Info(props) {
                         </Grid>
                     </Grid>
                 </Grid>
-            </Grid>
+            </Grid> ) : (<div>{'Loading...'}</div>)}
         </div>
     );
 
