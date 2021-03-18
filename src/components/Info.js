@@ -36,6 +36,25 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+const pics = [
+    'https://internal-cdn.amazon.com/phonetool.amazon.com/images/668637-1506544166',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=dannymas',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=gheakash',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=hashirq',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=vnadinic',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=paulbren',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=paclaire',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=kevsimo',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=sampatze',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=poprahul',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=danjhd',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=goraju',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=hferrer',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=mbt',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=ychupin',
+    'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=sgadipal',
+]
+
 export default function Info(props) {
     const classes = useStyles();
 
@@ -47,7 +66,7 @@ export default function Info(props) {
             <Grid container spacing={3}>
                 <Grid item xs={4}>
                     <Paper className={classes.paper}>
-                        <img src={'https://internal-cdn.amazon.com/badgephotos.amazon.com/?uid=dannymas'} style={{height:'315px'}}/>
+                        <img src={pics[Math.floor(Math.random()*15)]} style={{height:'315px'}}/>
                     </Paper>
                 </Grid>
                 <Grid item xs={8}>
@@ -74,35 +93,28 @@ export default function Info(props) {
                             <Paper className={classes.paperWhite}>{props.data.phone}</Paper>
                         </Grid>
                         <Grid item xs={4}>
-                            <Paper className={classes.paper}>Address:</Paper>
+                            <Paper className={classes.paper}>Street:</Paper>
                         </Grid>
                         <Grid item xs={8}>
-                            <Grid container spacing={3}>
-                                <Grid item xs={4}>
-                                    <Paper className={classes.paper}>Street:</Paper>
-                                </Grid>
-                                <Grid item xs={8}>
-                                    <Paper className={classes.paperWhite}>{props.data.address.streetB}</Paper>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Paper className={classes.paper}>City:</Paper>
-                                </Grid>
-                                <Grid item xs={8}>
-                                    <Paper className={classes.paperWhite}>{props.data.address.city}</Paper>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Paper className={classes.paper}>State:</Paper>
-                                </Grid>
-                                <Grid item xs={8}>
-                                    <Paper className={classes.paperWhite}>{props.data.address.state}</Paper>
-                                </Grid>
-                                <Grid item xs={4}>
-                                    <Paper className={classes.paper}>Country:</Paper>
-                                </Grid>
-                                <Grid item xs={8}>
-                                    <Paper className={classes.paperWhite}>{props.data.address.country}</Paper>
-                                </Grid>
-                            </Grid>
+                            <Paper className={classes.paperWhite}>{props.data.address.streetB}</Paper>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Paper className={classes.paper}>City:</Paper>
+                        </Grid>
+                        <Grid item xs={8}>
+                            <Paper className={classes.paperWhite}>{props.data.address.city}</Paper>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Paper className={classes.paper}>State:</Paper>
+                        </Grid>
+                        <Grid item xs={8}>
+                            <Paper className={classes.paperWhite}>{props.data.address.state}</Paper>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Paper className={classes.paper}>Country:</Paper>
+                        </Grid>
+                        <Grid item xs={8}>
+                            <Paper className={classes.paperWhite}>{props.data.address.country}</Paper>
                         </Grid>
                     </Grid>
                 </Grid>
